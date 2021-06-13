@@ -59,35 +59,21 @@ def resize(src,dst, w=None, h=None):
         print(str(_e))
         return (False, str(_e))
 
-def resize2(src=None,img_w=500,img_h=500, w=None, h=None):
-	#img = Im.open(src)
-    #img_w, img_h = img.size[0],img.size[1]
-    #img_w, img_h = 500,500
-    
-    w_ratio = img_w*1.0/w
-    new_w = w
-    new_h = int(img_h / w_ratio)
-    print("Old w,h: %s %s"%(img_w,img_h))
-    print("New w,h: %s %s"%(new_w,new_h))
-
-#resize2(w=300)
-#resize2(w=250)
-#resize2(h=250)
-
 if __name__ == "__main__":
+    #TODO: Перенести в тесты !
     src = "lenna.png"
     dst = "lenna_200x200.png"
     dst2 = "lenna_250x200.png"
     dst3 = "lenna_201x200.png"
     dst4 = "lenna4.png"
     dst5 = "lenna_204x200.png"
-    res, msg = resize(src,dst,w=200,h=200)
+    res, msg = resize(src,dst,w=200,h=200) # OK 
     print(res, "\n", msg,"\n"*3)
-    res, msg = resize(src,dst2,w=250,h=200) #NOT OK
+    res, msg = resize(src,dst2,w=250,h=200) # NOT OK
     print(res, "\n", msg,"\n"*3)
-    res, msg = resize(src,dst3,w=201,h=200) #OK
+    res, msg = resize(src,dst3,w=201,h=200) # OK
     print(res, "\n", msg,"\n"*3)
-    res, msg = resize(src,dst4) #OK
+    res, msg = resize(src,dst4) # OK
     print(res, "\n", msg,"\n"*3)
-    res, msg = resize(src,dst5,w=205,h=200)
+    res, msg = resize(src,dst5,w=205,h=200) # OK 
     print(res, "\n", msg,"\n"*3)
