@@ -11,6 +11,7 @@ urlpatterns = [
     path("", views.image_list, name = "image_list"),
     path('upload_image/', views.upload_image, name = 'upload_image'),
     path('success/', views.success, name = 'success'),
+    path('fail/', views.fail, name = 'fail'),
     path('resizing_result/', views.resizing_result, name = 'resizing_result'),
     ]
 
