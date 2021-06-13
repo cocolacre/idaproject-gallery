@@ -20,4 +20,3 @@ urlpatterns = [
     path("gallery/", include("gallery.urls")),
     path('admin/', admin.site.urls),
     ]
-print("[3]: ", urlpatterns)

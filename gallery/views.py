@@ -2,19 +2,20 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .forms import ImageForm
 
-# Create your views here.
-
 def index(request):
-    return HttpResponse("This is a gallery app with image resizer for Idaproject")
+    return HttpResponse("This is alpha gallery app with image resizer for Idaproject interview attempt.")
 
 def image_view(request):
     if request.method == "POST":
         form = ImageForm(request.POST, request.FILES)
-        if form.is_valid():
+        if form.is_valid(): #TODO: заменить на проверку соответствия заданию.
             form.save()
-            return redirect("success")
+            return redirect("success")#Q: Is "name" kwarg of django.urls.path used here?
     else:
+        #Here we recieve GET request,then return an HttpResponse 
+        #object with the result of the rendered template (1.html)
         form = ImageForm()
+        #
     return render(request, "1.html",{"form":form})
 
 def success(request):

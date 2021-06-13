@@ -9,29 +9,11 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-#Where would uploaded images be stored? ~MEDIA_ROOT?
-#How to make absolute path from curdir? path? os.path?
-#   os.path.abspath(os.curdir)
-#   C:\\Users\\79951\\Documents\\Task-Stack-Widget\\task-data\\2670\\ida
-#MEDIA_ROOT?
-#Type of MEDIA_ROOT: WindowsPath or str?
-
-
 import os
 from pathlib import Path
-#from django.conf import settings
-#print("MEDIA_ROOT: " + settings.MEDIA_ROOT)
-#MAKE SURE IT's WRITABLE for python user.
-#print("MEDIA_URL: " + settings.MEDIA_URL)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-#print("BASE_DIR: " + str(BASE_DIR))
-#C:\Users\79951\Documents\Task-Stack-Widget\task-data\2670\ida
-#MEDIA_ROOT = os.path.join(str(BASE_DIR), "uploads")
-#Must end with slash?
-#MEDIA_URL = '/uploads/'
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
