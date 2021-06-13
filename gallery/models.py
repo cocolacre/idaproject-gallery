@@ -5,12 +5,15 @@ class Image(models.Model):
     name = models.CharField(max_length=512)
     
     ### upload to MEDIA_ROOT/uploads
-    image = models.ImageField(upload_to = "uploads/", max_length=512,default="1.png")
+    image = models.ImageField(upload_to = "uploads/", max_length=512,default="placeholder_name.png")
     # TODO: improve default value?
+    url = models.CharField(max_length=1024, default="NULL")
+    
     
 #Q: What if we delete image file?
 #Q: What if filename already exist?
 #TODO: filename checks and optional modification
+#TODO: Test.
 #Q: What if image upload process fails?
 #   TODO: Test this.
 #NOTE: It is mandatory for the HTML form 
@@ -19,7 +22,8 @@ class Image(models.Model):
 #A: We needed to move project to WSL fs and chown recursively.
 #    sudo chown -R cocolacre /home/cocolacre/
 class ResizedImage(models.Model):
-    original = models.ForeignKey(Image, on_delete = models.CASCADE,default="1")
+    original = models.ForeignKey(Image, on_delete = models.CASCADE,default="placeholder_name.png")
+    #TODO: Improve\remove default placeholder_name.
     name = models.CharField(max_length=512)
-    image = models.ImageField(upload_to = "resized_uploads/", max_length=512,default="1.png")
+    image = models.ImageField(upload_to = "resized_uploads/", max_length=512,default="resized_placeholder_name.png")
     
