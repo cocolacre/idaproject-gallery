@@ -9,6 +9,11 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+#Where would uploaded images be stored? ~MEDIA_ROOT?
+#How to make absolute path from curdir? path? os.path?
+
+
+
 
 from pathlib import Path
 
