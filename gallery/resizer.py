@@ -44,11 +44,7 @@ def resize(src,dst, w=None, h=None):
         new_w = w
         new_h = h
         original_ratio = 1.0*img_w/float(img_h)
-        print("original_ratio: " + str(original_ratio))
         new_ratio = float(new_w)/float(new_h)
-        print("new_ratio: " + str(new_ratio))
-        print("abs((original_ratio - new_ratio)/original_ratio):")
-        print(abs((original_ratio - new_ratio)/original_ratio))
         if abs((original_ratio - new_ratio)/original_ratio) > 0.01:
             return (False, "Wrong ratio given. Either set just one value or set correct ratio manually.\n(And I'm not going to help you! Use calculator or something.)")
     try:
