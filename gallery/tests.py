@@ -19,7 +19,7 @@ class AlreadyExistsFilenameUploaded(TestCase):
         pass
     def test_resolve_duplicate_filename(self):
         #Добавить тестовое изображение трудовой книжки.
-        pass
+        pass #
 
 class AlreadyExistsFilenameResized(TestCase):
     def setUp(self):
