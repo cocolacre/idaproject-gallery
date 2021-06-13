@@ -19,14 +19,14 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
-from django.conf import settings
-print("MEDIA_ROOT: " + settings.MEDIA_ROOT)
+#from django.conf import settings
+#print("MEDIA_ROOT: " + settings.MEDIA_ROOT)
 #MAKE SURE IT's WRITABLE for python user.
-print("MEDIA_URL: " + settings.MEDIA_URL)
+#print("MEDIA_URL: " + settings.MEDIA_URL)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-print("BASE_DIR: " + str(BASE_DIR))
+#print("BASE_DIR: " + str(BASE_DIR))
 #C:\Users\79951\Documents\Task-Stack-Widget\task-data\2670\ida
 #MEDIA_ROOT = os.path.join(str(BASE_DIR), "uploads")
 #Must end with slash?
