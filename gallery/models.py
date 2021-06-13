@@ -7,10 +7,14 @@ class Image(models.Model):
     # file will be uploaded to MEDIA_ROOT/uploads
     
 #what if we delete image file?
-#what if filenames are duplicated?
+#what if filename already exist?
+#   we need filename checks and optional modification
 #what if image load fails?
-
+#   (?) It is mandatory for the HTML form 
+#   to have the attribute `enctype="multipart/form-data"`    
 
 class ResizedImage(models.Model):
-    image = models.ForeignKey(Image, on_delete = models.CASCADE)
-    resized_image_filename = models.CharField(max_length=512)
+    original = models.ForeignKey(Image, on_delete = models.CASCADE)
+    name = models.CharField(max_length=512)
+    image = models.ImageField(upload_to = "uploads/", max_length=512)
+    
