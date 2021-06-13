@@ -37,7 +37,7 @@ def upload_image(request):
         form = ImageForm(request.POST, request.FILES)
         if form.is_valid(): #TODO: заменить на проверку соответствия заданию.
             form.save()
-            return redirect("success")#Q: Is "name" kwarg of django.urls.path used here?
+            return redirect("resizing_result")#Q: Is "name" kwarg of django.urls.path used here?
     else:
         #Here we recieve GET request,then return an HttpResponse 
         #object with the result of the rendered template (1.html)
