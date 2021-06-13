@@ -26,6 +26,7 @@ print("BASE_DIR: " + str(BASE_DIR))
 #C:\Users\79951\Documents\Task-Stack-Widget\task-data\2670\ida
 MEDIA_ROOT = os.path.join(str(BASE_DIR), "uploads")
 print("MEDIA_ROOT: " + MEDIA_ROOT)
+MEDIA_URL = "/uploads/"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
