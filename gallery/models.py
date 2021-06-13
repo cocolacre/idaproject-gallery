@@ -12,6 +12,7 @@ class Image(models.Model):
 #what if image load fails?
 #   (?) It is mandatory for the HTML form 
 #   to have the attribute `enctype="multipart/form-data"`    
+#what if we work in Windows user filesystem from WSL...
 
 class ResizedImage(models.Model):
     original = models.ForeignKey(Image, on_delete = models.CASCADE)
