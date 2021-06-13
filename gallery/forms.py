@@ -6,3 +6,6 @@ class ImageForm(forms.ModelForm):
     class Meta:
         model = Image
         fields=['name','image']
+
+#TODO:
+#class CustomImageForm(forms.ModelForm):
