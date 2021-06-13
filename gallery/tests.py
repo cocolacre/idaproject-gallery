@@ -53,10 +53,10 @@ class TestResizer(TestCase):
     def setUp(self):
         #check lenna.png/download if needed.
         self.src = "lenna.png"
-        self.resized_filenames = ["lenna_200x200.png",
-                                  "lenna_201x200.png",
-                                  "lenna_204x200.png",
-                                  "lenna_250x250.png"]
+        self.resized_filenames = ["gallery/assets/lenna_200x200.png",
+                                  "gallery/assets/lenna_201x200.png",
+                                  "gallery/assets/lenna_204x200.png",
+                                  "gallery/assets/lenna_250x250.png"]
         #TODO: remove hardcoded duplicate names.
     
     def tearDown(self): #NOTE: Very dirty. Gotta go fast.
@@ -66,22 +66,26 @@ class TestResizer(TestCase):
             except Exception as _e:
                 pass
 
-    def test_resizer_no_values_given(self): #should raise or succeed?
-        dst = "lenna_200x200.png"
+    def test_resizer_no_values_given(self): #should raise
+        dst = "gallery/assets/lenna_200x200.png"
         res, msg = resize(self.src,dst)
-
+        self.assertFalse(res)
+        
     def test_resizer_both_values_and_wrong_ratio_given(self): #should raise.
-        dst = "lenna_250x200.png"
+        dst = "gallery/assets/lenna_250x200.png"
         res, msg = resize(self.src,dst,w=250,h=200)
 
     def test_resizer_almost_but_not_perfect_ratio_given(self): #should raise.
-        dst = "lenna_201x200.png"
+        dst = "gallery/assets/lenna_201x200.png"
         res, msg = resize(self.src,dst,w=201,h=200) # OK
-
+        self.assertTrue(res)
+        
     def test_resizer_correct_ratio_given(self): #should succeed.
-        dst = "lenna_200x200.png"
+        dst = "gallery/assets/lenna_200x200.png"
         res, msg = resize(self.src,dst,w=200,h=200)
-
+        self.assertTrue(res)
+        
     def test_one_value_given(self):
-        dst = "lenna_250x250.png"
+        dst = "gallery/assets/lenna_250x250.png"
         res, msg = resize(self.src,dst,w=250)
+        self.assertTrue(res)
