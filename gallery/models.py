@@ -3,7 +3,9 @@ from django.db import models
 # Create your models here.
 class Image(models.Model):
     name = models.CharField(max_length=512)
-    image = models.ImageField(max_length=512)
+    image = models.ImageField(upload_to = "uploads/", max_length=512)
+    # file will be uploaded to MEDIA_ROOT/uploads
+    
 #what if we delete image file?
 #what if filenames are duplicated?
 #what if image load fails?
