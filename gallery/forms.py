@@ -5,7 +5,7 @@ from .models import *
 class ImageForm(forms.ModelForm):
     class Meta:
         model = Image
-        fields=['name','image']
+        #fields=['image']
+        fields=["name", 'image']
 
-#TODO:
-#class CustomImageForm(forms.ModelForm):
+#TODO: class CustomImageForm(forms.ModelForm):
