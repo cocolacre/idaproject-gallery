@@ -7,7 +7,7 @@ class Image(models.Model):
     ### upload to MEDIA_ROOT/uploads
     image = models.ImageField(upload_to = "uploads", max_length=512,default="placeholder_name.png")
     # TODO: improve default value?
-    url = models.CharField(max_length=1024, default="")
+    url = models.CharField(max_length=1024, default=" ")
     #https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png
     
 #Q: What if we delete image file?

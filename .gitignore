@@ -1,0 +1,4 @@
+ida/__pycache__/
+gallery/migrations/__pycache__/
+ida/__pycache__/*
+gallery/__migrations/__pycache__/*
